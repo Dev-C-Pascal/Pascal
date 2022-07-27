@@ -1,0 +1,26 @@
+uses crt;
+var n,i,j:integer;
+begin
+write('n=');
+readln(n);
+for i:=1 to n do
+ begin
+  for j:=1 to n-i do write('  ');
+  for j:= n-i+1 to n do
+  if j=n-i+1 then write('*')
+  else if j=n then write(' *')
+  else write(' +');
+  writeln;
+ end;
+for i:=n+1 to 2*n-1 do
+ begin
+  for j:=1 to i-n do write('  ');
+  for j:=i-n+1 to n do
+   begin
+    if j=i-n+1 then write('*')
+    else if j=n then write(' *')
+    else write(' +');
+   end;
+  writeln;
+ end;
+end.
